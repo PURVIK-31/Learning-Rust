@@ -1,9 +1,15 @@
+
+//time for learning loops in rust : 
 fn main() {
-    let arr = [1, 2, 3, 4];
-    if arr.len() == 5 {
-    println!("{}", arr.len());
-    }
-    else{
-    println!("Array length is not 5");
+    let my_name = "Rust";
+    let mut counter = 0; 
+    loop {
+        counter += 1;
+        if counter == 5 {
+            break;
+        }
+        else{
+            println!("Hello from {}!", my_name);
+        }
     }
 }
