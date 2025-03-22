@@ -1,12 +1,11 @@
-fn main() {
-    let num :bool = check_even(12);
-    println!("{}", num);
+fn main(){
+learn_string();
 }
 
-// fn sum(a: u32, b: u32) -> u32{
-//     return a + b;
-// }
-
-fn check_even(a:u32)->bool{
-return a%2==0;
+fn learn_string(){
+   //static string: 
+    let  sasta_naam = "goatboi";
+   //dynamic string : 
+    let name = String::from("Purvik Sharma");
+    print!("My name is Coool boi - {} and sasta name is {}", name, sasta_naam);
 }
