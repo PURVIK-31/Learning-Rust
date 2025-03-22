@@ -15,7 +15,13 @@ fn main() {
     // }
 
     //for loop in rust
-    for i in 1..5{
-        println!("{}",i);
+    // for i in 1..5{
+    //     println!("{}",i);
+    // }
+    //while loop in rust : 
+    let mut counter = 0;
+    while counter < 5 {
+        println!("Hello from number:  {}", counter);
+        counter += 1;
     }
 }
