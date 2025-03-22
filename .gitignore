@@ -1,4 +1,4 @@
 .vscode
 target
-.src/main.exe
-.src/main.pdb
+./src/main.exe
+./src/main.pdb
