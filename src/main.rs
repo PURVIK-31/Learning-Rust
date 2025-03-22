@@ -1,4 +1,4 @@
-fn main(){
-let vector  = vec!["yo";3];
-print!("{:?}",vector);
+fn main() {
+    let arr: [i32; 5] = [1, 2, 3, 4, 5];
+    println!("{}", arr.len());
 }
