@@ -1,10 +1,11 @@
+//lets explore borrowing now!!
+
 fn main(){
-  let strinng = String::from("Hello World");  
-  let strinng2 = strinng;
-let val = get_andreturn(strinng2);
-print!("{:?}",val);
-}
-fn get_andreturn(s:String)-> (String, usize) {
-  let length = s.len();
-  return (s, length);
-}
+  // u can have multiple immutable references to a value
+   let s1 = String::from("hello");
+   let s2 = &s1;
+   let s3 = &s1;
+   let s4 = &s1;
+   print!("{} {} {} {}", s1, s2, s3, s4);
+  }
+
