@@ -1,11 +1,14 @@
-//lets explore borrowing now!!
-
 fn main(){
-  // u can have multiple immutable references to a value
-   let s1 = String::from("hello");
-   let s2 = &s1;
-   let s3 = &s1;
-   let s4 = &s1;
-   print!("{} {} {} {}", s1, s2, s3, s4);
-  }
+let mut s1 = String::from("goatye");
+let s2 = & mut s1;
+//gives error: 
+// let s3 = &s1;
+s2.push_str(" is a great artist");
+print!("{}",s2);
+print!("{}",s1);
+}
+
+//the two rules aree :
+//1. you can have either one mutable reference or multiple immutable references but not both
+//2. references must always be valid
 
