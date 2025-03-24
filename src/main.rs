@@ -16,10 +16,13 @@ match index {
 
 
 fn find_first_a(s:String)->Option<u32>{
-    for (i, c) in s.chars().enumerate(){
-        if c == 'o'{
-            return Some(i as u32);
-        }
-    }
+    // for (i, c) in s.chars().enumerate(){
+    //     if c == 'o'{
+    //         return Some(i as u32);
+    //     }
+    // }
+    //alternative to for loop we can also do : 
+    s.chars().enumerate().find(|(_i, c)| c == &'a').map(|(i, _)| i as u32);
+
     None
 }
