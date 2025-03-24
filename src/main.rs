@@ -1,26 +1,19 @@
-use std::collections::HashMap;
+//iterators in rust
 
-fn users_to_hashmap(users: Vec<User>) -> HashMap<String, i32> {
-    let mut hm = HashMap::new();
-    for user in users {
-        hm.insert(user.name, user.age);
-    }
-    return hm;
-}
+// defining a iterator
+// iterator is a type of rust that implements the iterator trait
+// iterator trait is defined in the standard library
+// iterator trait has a method called next that returns an option
+// option is an enum that has two variants Some and None
+// Some contains the next value and None indicates that the iterator is finished    
 
-struct User {
-    name: String,
-    age: i32,
-}
+use std::any::type_name_of_val;
 
-fn main() {
-    // Using User struct
-    let users = vec![
-        User { name: String::from("myname1"), age: 21 },
-        User { name: String::from("myname2"), age: 22 },
-        User { name: String::from("myname3"), age: 23 },
-    ];
-    
-    let user_hm = users_to_hashmap(users);
-    println!("User HashMap: {:?}", user_hm);
+
+fn main(){
+    let val = vec![1,2,3,4,5];
+    let iterator  = val.iter();
+    let typeofiter = type_name_of_val(&iterator);
+    println!("{}",typeofiter);
+
 }
