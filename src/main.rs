@@ -1,16 +1,26 @@
 use std::collections::HashMap;
 
-//assinment problem solution:
-fn convert_to_hashmap(vec:Vec<(String,i32)>)->HashMap<String,i32>{
-    let mut hm=  HashMap::new();
-    for (key,value) in vec{
-        hm.insert(key, value);
+fn users_to_hashmap(users: Vec<User>) -> HashMap<String, i32> {
+    let mut hm = HashMap::new();
+    for user in users {
+        hm.insert(user.name, user.age);
     }
-  return hm;
+    return hm;
 }
 
-fn main(){
-    let vector = vec![(String::from("myname1"),21),(String::from("myname2"),22),(String::from("myname3"),23)];
-    let hm = convert_to_hashmap(vector);
-    println!("{:?}",hm);
-    }
+struct User {
+    name: String,
+    age: i32,
+}
+
+fn main() {
+    // Using User struct
+    let users = vec![
+        User { name: String::from("myname1"), age: 21 },
+        User { name: String::from("myname2"), age: 22 },
+        User { name: String::from("myname3"), age: 23 },
+    ];
+    
+    let user_hm = users_to_hashmap(users);
+    println!("User HashMap: {:?}", user_hm);
+}
