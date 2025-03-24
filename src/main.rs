@@ -1,27 +1,27 @@
-// time to learn structs in rust : 
-
-struct Naam{
-    firstname: String,
-    lastname:String,
-    rollno: i32,
+struct Rectangle{
+    width : u32,
+    height:u32,
 }
-
-impl Naam {
-    //&self means that the method is taking a reference to the struct instance and it is present for the insatace of the struct, not the type.
+impl Rectangle{
+    fn getarea(&self)->u32{
+        return self.width * self.height;
+    }
+    fn getperimeter(&self)->u32{
+        return 2*(self.width + self.height);
+    }
     fn display(&self){
-        print!("{} {} {}",self.firstname,self.lastname,self.rollno);
-        }
-    fn printsmthing() {
-        print!("Hey from somthing !")
+        println!("Area of rectangle is : {}",self.getarea());
+        println!("Perimeter of rectangle is : {}",self.getperimeter());
     }
+    fn displayr(){
+        println!("Thanks for code execution!");
     }
-
+}
 fn main(){
-   let n = Naam {
-    firstname: "Rahul".to_string(),
-    lastname: "Kumar".to_string(),
-    rollno: 123,
-   };
-    n.display();
-        Naam::printsmthing();
+let rect1 = Rectangle{
+    width:30,
+    height:50,
+};
+rect1.display();
+Rectangle::displayr();
 }
