@@ -7,13 +7,13 @@
 // option is an enum that has two variants Some and None
 // Some contains the next value and None indicates that the iterator is finished    
 
-use std::any::type_name_of_val;
-
+//iterators are lazy, they do nothing until you call the next method
+//iterators are also composable, you can chain them together to perform complex operations
 
 fn main(){
     let val = vec![1,2,3,4,5];
-    let iterator  = val.iter();
-    let typeofiter = type_name_of_val(&iterator);
-    println!("{}",typeofiter);
+for i in val{
+    println!("{}",i);
+}
 
 }
