@@ -1,23 +1,16 @@
-//lets start with some advanced rust concepts :
+use std::collections::HashMap;
 
-//collections framework in rust!
-
-
-//vectors --> dynamic arrays : 
-
+//Hashmaps in Rust
 fn main(){
- let mut vec = Vec::new();
- vec.push(1);
-    vec.push(2);
-    vec.push(3);
-    vec.push(4);
- printeven(vec);
-}
+    let mut mymap =  HashMap::new();
+    mymap.insert(String::from("myname1"), 22);
+    mymap.insert(String::from("myname2"), 23);
+    let getval = mymap.get("noen");
+    match getval {
+        Some(val)=> println!("{:?}", val),
 
-fn printeven(vec:Vec<i32>){
-vec.iter().for_each(|x: &i32| {
-    if x%2==0{
-        println!("{}",x);
+        None => println!("No value found"),
+        
+        
     }
-});
 }
