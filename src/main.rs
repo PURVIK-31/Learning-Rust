@@ -6,16 +6,18 @@
 //vectors --> dynamic arrays : 
 
 fn main(){
-    let mut vector = Vec::new();
-    vector.push(1);
-    vector.push(2);
-    vector.push(3);
-    vector.pop();  // This removes the last element (3)
-    println!("{}",vector.capacity());
-    println!("{}",vector[0]);
-    println!("{}",vector[1]);
-    // The index 2 no longer exists after pop()
-    // You can add this back if you need it:
-    // vector.push(3);
-    // println!("{}",vector[2]);
+ let mut vec = Vec::new();
+ vec.push(1);
+    vec.push(2);
+    vec.push(3);
+    vec.push(4);
+ printeven(vec);
+}
+
+fn printeven(vec:Vec<i32>){
+vec.iter().for_each(|x: &i32| {
+    if x%2==0{
+        println!("{}",x);
+    }
+});
 }
