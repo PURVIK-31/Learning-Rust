@@ -12,7 +12,8 @@
 
 fn main(){
     let val = vec![1,2,3,4,5];
-for i in val{
+let vak = val.iter();       
+    for i in vak{
     println!("{}",i);
 }
 
