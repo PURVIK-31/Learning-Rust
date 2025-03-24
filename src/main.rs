@@ -1,11 +1,27 @@
-//lets see a special case in borrowing in rust: 
+// time to learn structs in rust : 
 
+struct Naam{
+    firstname: String,
+    lastname:String,
+    rollno: i32,
+}
 
- fn main(){
-  let mut s1  = String::from("hahaha");
-  let s2 = & mut s1;
-  print!("{}",s2.is_empty()); //lifespan ends here!!!
-  let s3 = & mut s1; //can be mutable or immutable won't really matter!
-  print!("Voila it works {}",s3);
-  //print!("{}",s1); //this will not work as s1 is borrowed by s2 and s3 
- }
+impl Naam {
+    //&self means that the method is taking a reference to the struct instance and it is present for the insatace of the struct, not the type.
+    fn display(&self){
+        print!("{} {} {}",self.firstname,self.lastname,self.rollno);
+        }
+    fn printsmthing() {
+        print!("Hey from somthing !")
+    }
+    }
+
+fn main(){
+   let n = Naam {
+    firstname: "Rahul".to_string(),
+    lastname: "Kumar".to_string(),
+    rollno: 123,
+   };
+    n.display();
+        Naam::printsmthing();
+}
