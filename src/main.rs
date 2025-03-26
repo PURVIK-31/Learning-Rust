@@ -1,15 +1,15 @@
 fn main(){
-    let name = String::from("Hello Rust");
-    let ans = getfirstword(name);
-    println!("Ans is {}", ans);
+    let name = String::from("Hell Rust");
+   
+    println!("Ans is {:?}",  getfirstword(&name));
 }
-fn getfirstword(str:String)->String{
-    let mut ans = String::from("");
+fn getfirstword(str:&String)->&str{
+    let mut count = 0;    
     for i in str.chars(){
         if i == ' ' {
             break;
         }
-        ans.push(i);
+        count+=1;
     }
-    return ans;
+    return &str[0..count];
 }
