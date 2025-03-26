@@ -1,10 +1,20 @@
-//we can also use slices in other data types like a vec or array
-
+//traits in rustop
+pub trait Summarize {
+    fn summarize(&self) -> String;
+}
+struct User{
+    name:String,
+    age:u32,
+}
+impl Summarize for User{
+    fn summarize(&self) -> String {
+        return format!("Name: {}, Age: {}",self.name,self.age);
+    }
+}
 fn main(){
-let arr =[1,2,4];
-let slice = &arr[..];
-println!("{:?}",slice);
-let vecu = vec![1,2,3];
-let vslice = &vecu[..];
-println!("{:?}",vslice);
+let john = User{
+name:String::from("johnny"),
+age:23,
+};
+println!("The user summary is {:?} ",john.summarize() );
 }
