@@ -1,15 +1,9 @@
 fn main(){
     let name = String::from("Hell Rust");
-   
-    println!("Ans is {:?}",  getfirstword(&name));
-}
-fn getfirstword(str:&String)->&str{
-    let mut count = 0;    
-    for i in str.chars(){
-        if i == ' ' {
-            break;
-        }
-        count+=1;
-    }
-    return &str[0..count];
+    let first_word = name.split_whitespace().next().unwrap_or("");
+    println!("First word is {}", first_word);
+    
+    // Alternatively using find() and slice:
+    let ans = name.find(' ').map(|i| &name[0..i]);
+    println!("Ans is {:?}", ans);
 }
