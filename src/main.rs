@@ -1,9 +1,9 @@
+use std::string;
+
+//the three types of strings in rust;
 fn main(){
-    let name = String::from("Hell Rust");
-    let first_word = name.split_whitespace().next().unwrap_or("");
-    println!("First word is {}", first_word);
-    
-    // Alternatively using find() and slice:
-    let ans = name.find(' ').map(|i| &name[0..i]);
-    println!("Ans is {:?}", ans);
+
+    let string1= String::from("hello rusty");
+    let string2 = &string1[0..3];
+    let string3 = "lamao"; //points to binary in the memory
 }
