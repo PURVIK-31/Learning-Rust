@@ -1,6 +1,15 @@
 fn main(){
-    let vec1 = vec![1, 2, 3];
-    let iter  = vec1.iter();
-    let filtered_iter = iter.filter(|x| *x % 2 == 0);
-    print!("{:?}", filtered_iter.collect::<Vec<&i32>>());  
+    let name = String::from("Hello Rust");
+    let ans = getfirstword(name);
+    println!("Ans is {}", ans);
+}
+fn getfirstword(str:String)->String{
+    let mut ans = String::from("");
+    for i in str.chars(){
+        if i == ' ' {
+            break;
+        }
+        ans.push(i);
+    }
+    return ans;
 }
