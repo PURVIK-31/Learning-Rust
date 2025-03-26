@@ -1,6 +1,8 @@
 //traits in rustop
 pub trait Summarize {
-    fn summarize(&self) -> String;
+    fn summarize(&self) -> String{
+        return String::from("Read more...");
+    }
 }
 struct User{
     name:String,
